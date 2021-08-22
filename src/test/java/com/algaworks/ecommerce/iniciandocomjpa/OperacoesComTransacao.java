@@ -31,7 +31,7 @@ public class OperacoesComTransacao extends EntityManagerTest {
 	public void inserirObjetoComMerge() {
 		Produto produto = new Produto();
 		
-		produto.setId(4);
+//		produto.setId(4); Comentado pois estamos utilizando IDENTITY
 		produto.setNome("Microfone Rode Videmic");
 		produto.setDescricao("A melhor qualidade de som");
 		produto.setPreco(new BigDecimal(1000));
@@ -68,7 +68,7 @@ public class OperacoesComTransacao extends EntityManagerTest {
 	public void atualizarObjeto() {
 		Produto produto = new Produto();
 		
-		produto.setId(1);
+//		produto.setId(1); Comentado pois estamos utilizando IDENTITY
 		produto.setNome("Kindle Paperwhite");
 		produto.setDescricao("Conheca o novo Kindle");
 		produto.setPreco(new BigDecimal(599));
@@ -106,7 +106,7 @@ public class OperacoesComTransacao extends EntityManagerTest {
 	public void inserirOPrimeiroObjeto() {
 		Produto produto = new Produto();
 		
-		produto.setId(2);
+//		produto.setId(2); Comentado pois estamos utilizando IDENTITY
 		produto.setNome("Camera Canon");
 		produto.setDescricao("A melhor defininacao para suas fotos");
 		produto.setPreco(new BigDecimal(5000));
