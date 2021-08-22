@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Cliente {
+public class Categoria {
 
 	@Id
 	@EqualsAndHashCode.Include
@@ -19,5 +19,5 @@ public class Cliente {
 	
 	private String nome;
 	
-	private SexoCliente sexo;
+	private Integer categoriaPaiId;
 }

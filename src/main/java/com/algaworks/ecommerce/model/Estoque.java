@@ -11,13 +11,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Cliente {
+public class Estoque {
 
 	@Id
 	@EqualsAndHashCode.Include
 	private Integer id;
 	
-	private String nome;
+	private Integer produtoId;
 	
-	private SexoCliente sexo;
+	private Integer quantidade;
 }
