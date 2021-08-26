@@ -9,7 +9,7 @@ public class OptionalTest extends EntityManagerTest {
 	
 	@Test
 	public void verificarCompotamento() {
-		Pedido pedido = entityManager.find(Pedido.class, 1);
+		entityManager.find(Pedido.class, 1);
 	}
 
 }
