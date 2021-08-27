@@ -1,6 +1,7 @@
 package com.algaworks.ecommerce.model;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.*;
@@ -22,6 +23,12 @@ public class Produto {
 	@EqualsAndHashCode.Include
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+
+	@Column(name = "data_criacao", updatable = false)
+	private LocalDateTime dataCriacao;
+
+	@Column(name = "data_ultima_atualizacao", insertable = false)
+	private LocalDateTime dataUltimaAtualizacao;
 	
 	private String nome;
 	

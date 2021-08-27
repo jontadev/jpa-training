@@ -35,10 +35,10 @@ public class Pedido {
 	@Column(name = "data_criacao")
 	private LocalDateTime dataCriacao;
 
-	@Column(name = "data_ultima_atualizacao")
+	@Column(name = "data_ultima_atualizacao", insertable = false)
 	private LocalDateTime dataUltimaAtualicao;
 	
-	@Column(name = "data_conclusao")
+	@Column(name = "data_conclusao" , updatable = false)
 	private LocalDateTime dataConclusao;
 	
 	@OneToOne(mappedBy = "pedido")
