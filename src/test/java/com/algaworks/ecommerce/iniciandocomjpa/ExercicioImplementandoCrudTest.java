@@ -12,7 +12,7 @@ public class ExercicioImplementandoCrudTest extends EntityManagerTest {
 	public void inserir() {
 		Cliente cliente = new Cliente();
 //		cliente.setId(3); Comentado pois estamos utilizando IDENTITY
-		cliente.setNome("José da Silva");
+		cliente.setNome("JosÃ© da Silva");
 		
 		entityManager.getTransaction().begin();
 		entityManager.persist(cliente);
@@ -21,7 +21,7 @@ public class ExercicioImplementandoCrudTest extends EntityManagerTest {
 		// clear hibernate memory in order to execute the select query
 		Cliente clientePersistido = entityManager.find(Cliente.class, cliente.getId());
 		Assert.assertNotNull(clientePersistido);
-		Assert.assertEquals("José da Silva", clientePersistido.getNome());
+		Assert.assertEquals("JosÃ© da Silva", clientePersistido.getNome());
 	}
 	
 	@Test
@@ -36,7 +36,7 @@ public class ExercicioImplementandoCrudTest extends EntityManagerTest {
 		Cliente cliente = entityManager.find(Cliente.class, 1);
 		
 		entityManager.getTransaction().begin();
-		cliente.setNome("José da Silva");
+		cliente.setNome("JosÃ© da Silva");
 		entityManager.getTransaction().commit();
 		
 		// clear hibernate memory in order to execute the select query
@@ -44,7 +44,7 @@ public class ExercicioImplementandoCrudTest extends EntityManagerTest {
 		
 		Cliente clientePersistido = entityManager.find(Cliente.class, cliente.getId());
 		Assert.assertNotNull(clientePersistido);
-		Assert.assertEquals("José da Silva", clientePersistido.getNome());
+		Assert.assertEquals("JosÃ© da Silva", clientePersistido.getNome());
 	}
 	
 	@Test
