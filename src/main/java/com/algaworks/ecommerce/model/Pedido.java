@@ -101,7 +101,7 @@ public class Pedido {
 	}
 
 	@PostLoad
-	public void aoCarregar() {
+	public void aposCarregar() {
 		System.out.println("Após carregar o Pedido.");
 	}
 
