@@ -17,13 +17,8 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "estoque")
-public class Estoque {
+public class Estoque extends EntidadeBaseInteger{
 
-	@Id
-	@EqualsAndHashCode.Include
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	
 	@OneToOne(optional = false)
 	@JoinColumn(name = "produto_id")
 	private Produto produto;

@@ -18,13 +18,8 @@ import lombok.Setter;
 @Entity
 @Table(name = "pedido")
 @EntityListeners({GerarNotaFiscalListener.class, GenericoListener.class}) // Listener
-public class Pedido {
+public class Pedido extends EntidadeBaseInteger {
 
-	@Id
-	@EqualsAndHashCode.Include
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "cliente_id")
 	private Cliente cliente;
@@ -50,7 +45,7 @@ public class Pedido {
 	private StatusPedido status;
 	
 	@OneToOne(mappedBy = "pedido")
-	private PagamentoCartao pagamento;
+	private Pagamento pagamento;
 	
 	@Embedded
 	private EnderecoEntregaPedido enderecoEntrega;

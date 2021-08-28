@@ -1,7 +1,9 @@
 package com.algaworks.ecommerce.relacionamentos.exercicios;
 
+import java.io.IOException;
 import java.util.Date;
 
+import com.algaworks.ecommerce.mapeamentoavancado.SalvandoArquivosTest;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,7 +20,7 @@ public class ExercicioOneToOne extends EntityManagerTest {
 		
 		NotaFiscal notaFiscal = new NotaFiscal();
 		notaFiscal.setDataEmissao(new Date());
-		notaFiscal.setXml("Local do XML...");
+		notaFiscal.setXml(carregarNotaFiscal());
 		notaFiscal.setPedido(pedido);
 		
 		entityManager.getTransaction().begin();
@@ -32,6 +34,13 @@ public class ExercicioOneToOne extends EntityManagerTest {
 		
 		Cliente clienteVerificacao = entityManager.find(Cliente.class, 1);
 		Assert.assertFalse(clienteVerificacao.getPedidos().isEmpty());
-		
+	}
+
+	private static byte[] carregarNotaFiscal() {
+		try {
+			return SalvandoArquivosTest.class.getResourceAsStream("/nota-fiscal.xml").readAllBytes();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
 	}
 }
